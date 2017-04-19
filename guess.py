@@ -1,31 +1,39 @@
-#This is a Guess the Number game
+#This is a Guess the Number game.
 import random
 
 guessesTaken = 0
+randRange1 = 1
+randRange2 = 20
+turnRange = 6
 
 print('Hello! What is your name?')
-myName = input()
+myName = input() 
 
-number = random.randint(1,20)
-print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')
+number = random.randint(randRange1, randRange2)
+print('Well, ' + myName + ", I am thinking of a number between %s and %s." % (randRange1, randRange2))
 
-for guessesTaken in range(6):
+for guessesTaken in range(turnRange):
     print('Take a guess.')
-    guess = input()
-    guess = int(guess)
+    try:
+        guess = int(input())                    
+        if guess < number:
+            print('Your guess is too low.')
 
-    if guess < number:
-        print('Your guess is too low.')
+        if guess > number:
+            print('Your guess is too high.')
 
-    if guess > number:
-        print('Your guess is too high.')
-
-    if guess == number:
-        break
+        if guess == number:
+            break
+    except ValueError:
+        print('Whoops! That guess isn\'t valid.')
+        continue
 
 if guess == number:
     guessesTaken = str(guessesTaken + 1)
-    print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')
+    if guessesTaken != 1:
+        print('Good job, ' + myName + '! You guessed my number in ' + str(guessesTaken) + ' guesses!')
+    else:
+        print('Good job, ' + myName + '! You guessed my number in ' + str(guessesTaken) + ' guess!') 
 
 if guess != number:
     number = str(number)
