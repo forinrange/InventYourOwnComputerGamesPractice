@@ -25,7 +25,7 @@ def checkCave(chosenCave):
     print()
     time.sleep(2)
 
-    friendlyCave == random.randint(1, 2)
+    friendlyCave = random.randint(1, 2)
 
     if chosenCave == str(friendlyCave):
         print('Gives you his treasure!')
