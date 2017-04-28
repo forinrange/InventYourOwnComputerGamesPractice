@@ -10,7 +10,7 @@ def drawBoard(board):
     print('-+-+-')
     print(board[4] + '|' + board[5] + '|' + board[6])
     print('-+-+-')
-    print(board[1] + '|' + board[5] + '|' + board[3])
+    print(board[1] + '|' + board[2] + '|' + board[3])
 
 def inputPlayerLetter():
     #Lets the player type which letter they want to be.
