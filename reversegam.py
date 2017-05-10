@@ -6,26 +6,26 @@ HEIGHT = 8 # Board is 8 spaces tall.
 def drawBoard(board):
     # Print the board passed to this function. Return None.
     print('  12345678')
-    print(' +--------+')
+    print(' *========*')
     for y in range(HEIGHT):
         print('%s|' % (y+1), end='')
         for x in range(WIDTH):
             print(board[x][y], end='')
         print('|%s' % (y+1))
-    print(' +--------+')
+    print(' *========*')
     print('  12345678')
 
 def getNewBoard():
     # Create a brand-new, blank board data structure.
     board = []
     for i in range(WIDTH):
-        board.append([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
+        board.append(['-', '-', '-', '-', '-', '-', '-', '-'])
     return board
 
 def isValidMove(board, tile, xstart, ystart):
     # Return False if the player's move on space xstart, ystart is invalid.
     # If it is a valid move, return a list of spaces that would become the player's if they made a move here.
-    if board[xstart][ystart] != ' ' or not isOnBoard(xstart, ystart):
+    if board[xstart][ystart] != '-' or not isOnBoard(xstart, ystart):
         return False
 
     if tile == 'X':
