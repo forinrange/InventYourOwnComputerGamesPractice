@@ -101,7 +101,7 @@ def playAgain():
 print('H A N G M A N')
 
 difficulty = ''
-while difficulty not in 'EMH':
+while difficulty not in list('EMH'):
     print('Enter difficulty: E - Easy, M - Medium, H - Hard')
     difficulty = input().upper()
 if difficulty == 'M':
